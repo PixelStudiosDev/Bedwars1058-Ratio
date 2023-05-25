@@ -18,12 +18,12 @@ public class Main extends JavaPlugin {
         plugin = this;
 
         if (Bukkit.getPluginManager().isPluginEnabled("BedWarsProxy")) {
-            bedwarsPlugin = 0;
-        }
-        if (Bukkit.getPluginManager().isPluginEnabled("BedWars1058")) {
             bedwarsPlugin = 1;
         }
-        if (bedwarsPlugin != 0 && bedwarsPlugin != 1) {
+        if (Bukkit.getPluginManager().isPluginEnabled("BedWars1058")) {
+            bedwarsPlugin = 2;
+        }
+        if (bedwarsPlugin != 1 && bedwarsPlugin != 2) {
             getLogger().severe("Bedwars1058/BedwarsProxy plugin was not found. Disabling...");
             Bukkit.getPluginManager().disablePlugin(this);
             return;

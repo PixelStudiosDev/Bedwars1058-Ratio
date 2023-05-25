@@ -34,19 +34,19 @@ public class Placeholders extends PlaceholderExpansion {
         DecimalFormat decimalFormat = new DecimalFormat("#####.##");
 
         if (params.equalsIgnoreCase("kdr")) {
-            if (Main.getPlugin().getBedwarsPlugin() == 0) {
+            if (Main.getPlugin().getBedwarsPlugin() == 1) {
                 return decimalFormat.format(BedWarsProxy.getStatsCache().getPlayerKills(player.getUniqueId()) / BedWarsProxy.getStatsCache().getPlayerDeaths(player.getUniqueId()));
             }
             return decimalFormat.format(BedWars.getStatsManager().get(player.getUniqueId()).getKills() / BedWars.getStatsManager().get(player.getUniqueId()).getDeaths());
         }
         if (params.equalsIgnoreCase("fkdr")) {
-            if (Main.getPlugin().getBedwarsPlugin() == 0) {
+            if (Main.getPlugin().getBedwarsPlugin() == 1) {
                 return decimalFormat.format(BedWarsProxy.getStatsCache().getPlayerFinalKills(player.getUniqueId()) / BedWarsProxy.getStatsCache().getPlayerFinalDeaths(player.getUniqueId()));
             }
             return decimalFormat.format(BedWars.getStatsManager().get(player.getUniqueId()).getFinalKills() / BedWars.getStatsManager().get(player.getUniqueId()).getFinalDeaths());
         }
         if (params.equalsIgnoreCase("wlr")) {
-            if (Main.getPlugin().getBedwarsPlugin() == 0) {
+            if (Main.getPlugin().getBedwarsPlugin() == 1) {
                 return decimalFormat.format(BedWarsProxy.getStatsCache().getPlayerWins(player.getUniqueId()) / BedWarsProxy.getStatsCache().getPlayerLoses(player.getUniqueId()));
             }
             return decimalFormat.format(BedWars.getStatsManager().get(player.getUniqueId()).getWins() / BedWars.getStatsManager().get(player.getUniqueId()).getLosses());
