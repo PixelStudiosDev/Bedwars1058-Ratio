@@ -35,23 +35,43 @@ public class Placeholders extends PlaceholderExpansion {
 
         if (params.equalsIgnoreCase("kdr")) {
             if (Main.getPlugin().getBedwarsPlugin() == 1) {
-                return decimalFormat.format(BedWarsProxy.getStatsCache().getPlayerKills(player.getUniqueId()) / BedWarsProxy.getStatsCache().getPlayerDeaths(player.getUniqueId()));
+                double deaths = BedWarsProxy.getStatsCache().getPlayerDeaths(player.getUniqueId());
+                if(deaths != 0){
+                    return decimalFormat.format(BedWarsProxy.getStatsCache().getPlayerKills(player.getUniqueId()) / deaths);
+                }
             }
-            return decimalFormat.format(BedWars.getStatsManager().get(player.getUniqueId()).getKills() / BedWars.getStatsManager().get(player.getUniqueId()).getDeaths());
+            double deaths = BedWars.getStatsManager().get(player.getUniqueId()).getDeaths();
+            if(deaths != 0){
+                return decimalFormat.format(BedWars.getStatsManager().get(player.getUniqueId()).getKills() / deaths);
+            }
         }
         if (params.equalsIgnoreCase("fkdr")) {
             if (Main.getPlugin().getBedwarsPlugin() == 1) {
-                return decimalFormat.format(BedWarsProxy.getStatsCache().getPlayerFinalKills(player.getUniqueId()) / BedWarsProxy.getStatsCache().getPlayerFinalDeaths(player.getUniqueId()));
+                double finalDeaths = BedWarsProxy.getStatsCache().getPlayerFinalDeaths(player.getUniqueId());
+                if(finalDeaths != 0){
+                    return decimalFormat.format(BedWarsProxy.getStatsCache().getPlayerFinalKills(player.getUniqueId()) / finalDeaths);
+                }
             }
-            return decimalFormat.format(BedWars.getStatsManager().get(player.getUniqueId()).getFinalKills() / BedWars.getStatsManager().get(player.getUniqueId()).getFinalDeaths());
+
+            double finalDeaths = BedWars.getStatsManager().get(player.getUniqueId()).getFinalDeaths();
+            if(finalDeaths != 0){
+                return decimalFormat.format(BedWars.getStatsManager().get(player.getUniqueId()).getFinalKills() / finalDeaths);
+            }
         }
         if (params.equalsIgnoreCase("wlr")) {
             if (Main.getPlugin().getBedwarsPlugin() == 1) {
-                return decimalFormat.format(BedWarsProxy.getStatsCache().getPlayerWins(player.getUniqueId()) / BedWarsProxy.getStatsCache().getPlayerLoses(player.getUniqueId()));
+                double lose = BedWarsProxy.getStatsCache().getPlayerLoses(player.getUniqueId());
+                if(lose != 0){
+                    return decimalFormat.format(BedWarsProxy.getStatsCache().getPlayerWins(player.getUniqueId()) / lose);
+                }
             }
-            return decimalFormat.format(BedWars.getStatsManager().get(player.getUniqueId()).getWins() / BedWars.getStatsManager().get(player.getUniqueId()).getLosses());
+
+            double lose = BedWars.getStatsManager().get(player.getUniqueId()).getLosses();
+            if(lose != 0){
+                return decimalFormat.format(BedWars.getStatsManager().get(player.getUniqueId()).getWins() / lose);
+            }
         }
 
-        return null;
+        return "NaN";
     }
 }
