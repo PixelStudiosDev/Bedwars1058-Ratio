@@ -11,9 +11,9 @@ public class Main extends JavaPlugin {
 
     @Getter
     private static Main plugin;
-
     private int bedwarsPlugin;
 
+    @Override
     public void onEnable() {
         plugin = this;
 
@@ -39,6 +39,7 @@ public class Main extends JavaPlugin {
         getLogger().info(ChatColor.translateAlternateColorCodes('&', "&a" + getDescription().getName() + " plugin by itz_leoo has been successfully enabled."));
     }
 
+    @Override
     public void onDisable() {
         getLogger().info(ChatColor.translateAlternateColorCodes('&', "&c" + getDescription().getName() + " plugin by itz_leoo has been successfully disabled."));
     }
