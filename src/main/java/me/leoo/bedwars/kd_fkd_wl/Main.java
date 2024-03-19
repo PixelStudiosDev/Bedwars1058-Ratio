@@ -2,45 +2,57 @@ package me.leoo.bedwars.kd_fkd_wl;
 
 import lombok.Getter;
 import me.leoo.bedwars.kd_fkd_wl.papi.Placeholders;
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
+import me.leoo.bedwars.kd_fkd_wl.utils.BedwarsMode;
+import me.leoo.utils.bukkit.Utils;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import static org.bukkit.Bukkit.getPluginManager;
 
 @Getter
 public class Main extends JavaPlugin {
 
     @Getter
     private static Main plugin;
-    private int bedwarsPlugin;
+
+    private BedwarsMode bedwarsMode;
 
     @Override
     public void onEnable() {
         plugin = this;
 
-        if (Bukkit.getPluginManager().isPluginEnabled("BedWarsProxy")) {
-            bedwarsPlugin = 1;
+        Utils.initialize(this);
+
+        for (BedwarsMode mode : BedwarsMode.values()) {
+            if (getPluginManager().isPluginEnabled(mode.getName())) {
+                bedwarsMode = mode;
+
+                getLogger().info("Hooked into " + mode.getName());
+            }
         }
-        if (Bukkit.getPluginManager().isPluginEnabled("BedWars1058")) {
-            bedwarsPlugin = 2;
-        }
-        if (bedwarsPlugin != 1 && bedwarsPlugin != 2) {
-            getLogger().severe("Bedwars1058/BedwarsProxy plugin was not found. Disabling...");
-            Bukkit.getPluginManager().disablePlugin(this);
+
+        if (bedwarsMode == null) {
+            getLogger().info("Bedwars1058/BedwarsProxy not found. Disabling...");
+
+            getPluginManager().disablePlugin(this);
+
             return;
         }
-        if (Bukkit.getPluginManager().getPlugin("PlaceholderAPI") == null) {
+
+
+        if (getPluginManager().isPluginEnabled("PlaceholderAPI")) {
             getLogger().severe("PlaceholderAPI plugin was not found. Disabling...");
-            Bukkit.getPluginManager().disablePlugin(this);
+            getPluginManager().disablePlugin(this);
+
             return;
         }
 
         new Placeholders().register();
 
-        getLogger().info(ChatColor.translateAlternateColorCodes('&', "&a" + getDescription().getName() + " plugin by itz_leoo has been successfully enabled."));
+        getLogger().info(getDescription().getName() + " plugin by itz_leoo has been successfully enabled.");
     }
 
     @Override
     public void onDisable() {
-        getLogger().info(ChatColor.translateAlternateColorCodes('&', "&c" + getDescription().getName() + " plugin by itz_leoo has been successfully disabled."));
+        getLogger().info(getDescription().getName() + " plugin by itz_leoo has been successfully disabled.");
     }
 }

@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Bedwars1058-Kdr-Fkdr-Wlr" />
         <module name="Bedwars1058-RewardSummary" />
+        <module name="kd_fkd_wl" />
       </profile>
     </annotationProcessing>
   </component>
