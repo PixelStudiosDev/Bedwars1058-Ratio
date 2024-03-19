@@ -1,8 +1,8 @@
-package me.leoo.bedwars.kd_fkd_wl;
+package me.leoo.bedwars.ratio;
 
 import lombok.Getter;
-import me.leoo.bedwars.kd_fkd_wl.papi.Placeholders;
-import me.leoo.bedwars.kd_fkd_wl.utils.BedwarsMode;
+import me.leoo.bedwars.ratio.papi.Placeholders;
+import me.leoo.bedwars.ratio.utils.BedwarsMode;
 import me.leoo.utils.bukkit.Utils;
 import org.bukkit.plugin.java.JavaPlugin;
 

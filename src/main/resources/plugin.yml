@@ -1,8 +1,8 @@
-name: BedWars1058-Kdr_Fkdr_Wlr
+name: BedWars1058-Ratio
 version: ${project.version}
 author: itz_leoo
-main: me.leoo.bedwars.kd_fkd_wl.Main
-description: BedWars1058 Kdr, Fkdr and Wlr stats Addon
+main: me.leoo.bedwars.ratio.Main
+description: BedWars1058 Ratio stats Addon
 depend:
   - PlaceholderAPI
 softdepend:

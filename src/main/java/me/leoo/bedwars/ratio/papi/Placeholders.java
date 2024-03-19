@@ -1,10 +1,10 @@
-package me.leoo.bedwars.kd_fkd_wl.papi;
+package me.leoo.bedwars.ratio.papi;
 
 import com.andrei1058.bedwars.BedWars;
 import com.andrei1058.bedwars.proxy.BedWarsProxy;
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
-import me.leoo.bedwars.kd_fkd_wl.Main;
-import me.leoo.bedwars.kd_fkd_wl.utils.BedwarsMode;
+import me.leoo.bedwars.ratio.Main;
+import me.leoo.bedwars.ratio.utils.BedwarsMode;
 import org.bukkit.OfflinePlayer;
 import org.jetbrains.annotations.NotNull;
 

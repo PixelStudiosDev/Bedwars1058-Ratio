@@ -1,4 +1,4 @@
-package me.leoo.bedwars.kd_fkd_wl.utils;
+package me.leoo.bedwars.ratio.utils;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
