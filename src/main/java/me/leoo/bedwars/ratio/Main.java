@@ -39,7 +39,7 @@ public class Main extends JavaPlugin {
         }
 
 
-        if (getPluginManager().isPluginEnabled("PlaceholderAPI")) {
+        if (!getPluginManager().isPluginEnabled("PlaceholderAPI")) {
             getLogger().severe("PlaceholderAPI plugin was not found. Disabling...");
             getPluginManager().disablePlugin(this);
 
