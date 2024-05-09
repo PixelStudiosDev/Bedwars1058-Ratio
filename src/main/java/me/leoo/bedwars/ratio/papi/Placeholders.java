@@ -89,6 +89,6 @@ public class Placeholders extends PlaceholderExpansion {
             }
         }
 
-        return "NaN";
+        return Main.getPlugin().getMainConfig().getString("ratio.placeholders.null-text");
     }
 }

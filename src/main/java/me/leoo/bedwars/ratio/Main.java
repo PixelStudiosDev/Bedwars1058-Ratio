@@ -1,9 +1,11 @@
 package me.leoo.bedwars.ratio;
 
 import lombok.Getter;
+import me.leoo.bedwars.ratio.config.MainConfig;
 import me.leoo.bedwars.ratio.papi.Placeholders;
 import me.leoo.bedwars.ratio.utils.BedwarsMode;
 import me.leoo.utils.bukkit.Utils;
+import me.leoo.utils.bukkit.config.ConfigManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import static org.bukkit.Bukkit.getPluginManager;
@@ -15,6 +17,7 @@ public class Main extends JavaPlugin {
     private static Main plugin;
 
     private BedwarsMode bedwarsMode;
+    private ConfigManager mainConfig;
 
     @Override
     public void onEnable() {
@@ -38,6 +41,7 @@ public class Main extends JavaPlugin {
             return;
         }
 
+        mainConfig = new MainConfig("config", bedwarsMode.getPath());
 
         if (!getPluginManager().isPluginEnabled("PlaceholderAPI")) {
             getLogger().severe("PlaceholderAPI plugin was not found. Disabling...");

@@ -6,7 +6,7 @@
 
     <groupId>me.leoo.bedwars</groupId>
     <artifactId>Bedwars1058-Ratio</artifactId>
-    <version>1.1.4</version>
+    <version>1.1.6</version>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
@@ -68,7 +68,7 @@
         <dependency>
             <groupId>me.leoo.utils</groupId>
             <artifactId>bukkit</artifactId>
-            <version>1.7.11</version>
+            <version>1.7.17</version>
         </dependency>
     </dependencies>
 
