@@ -7,9 +7,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="Bedwars1058-Ratio" />
         <module name="Bedwars1058-Kdr-Fkdr-Wlr" />
         <module name="Bedwars1058-RewardSummary" />
-        <module name="kd_fkd_wl" />
+        <module name="ratio" />
       </profile>
     </annotationProcessing>
   </component>

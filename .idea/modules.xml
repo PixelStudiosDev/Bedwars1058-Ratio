@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/kd_fkd_wl.iml" filepath="$PROJECT_DIR$/kd_fkd_wl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Bedwars1058-Ratio.iml" filepath="$PROJECT_DIR$/Bedwars1058-Ratio.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ratio.iml" filepath="$PROJECT_DIR$/ratio.iml" />
     </modules>
   </component>
 </project>
